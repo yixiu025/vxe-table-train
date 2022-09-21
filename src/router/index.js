@@ -1,21 +1,41 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-const routes = [
+import Layout from "@/layouts/index";
+
+import basicRoutes from "./modules/basic";
+import advancedRoutes from "./modules/advanced";
+import bigdataRoutes from "./modules/bigdata";
+import editRoutes from "./modules/edit";
+import pluginRoutes from "./modules/plugin";
+
+export const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    redirect: "/home",
+    component: Layout,
+    children: [
+      {
+        path: "home",
+        name: "Home",
+        title: "首页",
+        component: () => import("@/views/home/index"),
+      },
+    ],
   },
-]
+  // basicRoutes,
+  // advancedRoutes,
+  // editRoutes,
+  // bigdataRoutes,
+  // pluginRoutes,
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
