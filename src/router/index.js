@@ -26,7 +26,7 @@ export const routes = [
     ],
   },
   basicRoutes,
-  // advancedRoutes,
+  advancedRoutes,
   // editRoutes,
   // bigdataRoutes,
   // pluginRoutes,

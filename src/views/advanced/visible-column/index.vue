@@ -1,0 +1,9 @@
+<template>
+  <dl>
+    <dt>显隐列</dt>
+    <dd>隐藏列</dd>
+    <dd>动态显隐</dd>
+    <dd>重置隐藏</dd>
+    <dd>折叠列</dd>
+  </dl>
+</template>

@@ -1,0 +1,9 @@
+<template>
+  <dl>
+    <dt>行列合并</dt>
+    <dd>行合并</dd>
+    <dd>列合并</dd>
+    <dd>动态合并-spanMethod</dd>
+    <dd>动态合并-mergeCells</dd>
+  </dl>
+</template>
