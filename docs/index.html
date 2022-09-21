@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: "",
+        repo: "",
+        // 封面
+        coverpage: true,
+        // 加载侧边栏(_sidebar.md)
+        loadSidebar: true,
+        markdown: {
+          renderer: {
+            table: function (header, body) {
+              // 从表体第一行读取列宽配置
+              let firstRow = body.substring(0, body.indexOf("</tr>") + 5);
+              // 将列宽配置dom字符串转换为可处理的字符串 :width,:width,...
+              let colWidthConfig = firstRow
+                .replace("<tr>", "")
+                .replace("</tr>", "")
+                .replaceAll("\n", "")
+                .replace(/<td[^>]*>/g, "")
+                .replaceAll("</td>", ",");
+              colWidthConfig = colWidthConfig.substring(0, colWidthConfig.length - 1);
+              let colgroupDomStr = "";
+              // 当前读取到的第一行是列宽配置行, 拼接列宽配置dom字符串
+              if (colWidthConfig.startsWith(":")) {
+                // 去除多余的 :
+                colWidthConfig = colWidthConfig.replaceAll(":", "");
+                colgroupDomStr = "<colgroup>";
+                for (let item of colWidthConfig.split(",")) {
+                  colgroupDomStr += `<col width="${item}"></col>`;
+                }
+                colgroupDomStr += "</colgroup>";
+
+                body = body.substring(body.indexOf("</tr>") + 5);
+              }
+
+              // 拼接table dom字符串并返回
+              return (
+                "<table>" +
+                colgroupDomStr +
+                "<thead>" +
+                header +
+                "</thead><tbody>" +
+                body +
+                "</tbody>" +
+                "</table>"
+              );
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Docsify v4 -->
+    <script src="./script/docsify.min.js"></script>
+    <!-- image 缩放插件 -->
+    <script src="./script/zoom-image.min.js"></script>
+  </body>
+</html>
