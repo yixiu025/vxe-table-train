@@ -18,14 +18,14 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: "home",
+        path: "/home",
         name: "Home",
         title: "首页",
         component: () => import("@/views/home/index"),
       },
     ],
   },
-  // basicRoutes,
+  basicRoutes,
   // advancedRoutes,
   // editRoutes,
   // bigdataRoutes,

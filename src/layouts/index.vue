@@ -6,12 +6,13 @@
       background-color="#282c34"
       text-color="#fff"
       active-text-color="#ffd04b"
+      router
     >
       <menu-item
         v-for="item in routes"
         :key="item.path"
         :value="item"
-        :parent-path="item.path"
+        parent-path=""
       ></menu-item>
     </el-menu>
     <div class="app-main">
