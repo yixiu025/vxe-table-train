@@ -4,6 +4,10 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+// ElementUI
+require("@/lib/element-ui/index");
+
+// VXETable
 require("@/lib/vxe-table/index");
 
 new Vue({
