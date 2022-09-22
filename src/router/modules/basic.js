@@ -42,6 +42,12 @@ const basicRoutes = {
       title: "展开行",
       component: () => import("@/views/basic/expand/index"),
     },
+    {
+      path: "tree",
+      name: "BasicTree",
+      title: "树形表格",
+      component: () => import("@/views/basic/tree/index"),
+    },
   ],
 };
 
