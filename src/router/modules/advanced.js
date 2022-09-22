@@ -36,6 +36,12 @@ const advancedRoutes = {
       title: "右键菜单",
       component: () => import("@/views/advanced/contextmenu/index"),
     },
+    {
+      path: "keyboard",
+      name: "AdvancedKeyboard",
+      title: "键盘导航",
+      component: () => import("@/views/advanced/keyboard/index"),
+    },
   ],
 };
 
