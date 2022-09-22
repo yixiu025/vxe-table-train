@@ -29,7 +29,7 @@ export const routes = [
   advancedRoutes,
   editRoutes,
   bigdataRoutes,
-  // pluginRoutes,
+  pluginRoutes,
 ];
 
 const router = new VueRouter({
