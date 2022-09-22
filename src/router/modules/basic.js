@@ -36,6 +36,12 @@ const basicRoutes = {
       title: "列宽拖拽",
       component: () => import("@/views/basic/width-drag/index"),
     },
+    {
+      path: "expand",
+      name: "BasicExpand",
+      title: "展开行",
+      component: () => import("@/views/basic/expand/index"),
+    },
   ],
 };
 
